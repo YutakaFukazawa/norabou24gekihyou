@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 
 """
-Talk to the City - シンプル版
-一括処理スクリプト
-
 このスクリプトは、Polisコンサルテーションデータを処理し、
 可視化用のウェブサイトを単一のプロセスで生成します。
 
@@ -1058,7 +1055,7 @@ def generate_website(data: Dict[str, Any], comments_df: pd.DataFrame, output_dir
 def main():
     """メイン処理関数"""
     # コマンドライン引数の解析
-    parser = argparse.ArgumentParser(description='Talk to the City - データ処理と可視化')
+    parser = argparse.ArgumentParser(description='データ処理と可視化')
     parser.add_argument('--config', type=str, default='config.json', help='設定ファイルのパス')
     parser.add_argument('--input', type=str, help='入力CSVファイルのパス')
     parser.add_argument('--output', type=str, help='出力ディレクトリのパス')
