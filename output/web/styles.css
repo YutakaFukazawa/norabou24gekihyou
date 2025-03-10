@@ -1,0 +1,227 @@
+/* 全体のスタイル */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ヘッダー */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.question {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #3498db;
+}
+
+.description {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+/* メインコンテンツ */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+/* 全体概要 */
+.overview p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* 可視化 */
+.visualization {
+    min-height: 500px;
+}
+
+#scatter-plot {
+    width: 100%;
+    height: 500px;
+}
+
+/* 作品別分析 */
+.categories {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.category-analysis {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ecf0f1;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.category-section {
+    margin-bottom: 20px;
+}
+
+.category-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* クラスター分析 */
+.cluster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.cluster-card {
+    border: 2px solid;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.cluster-card:hover {
+    transform: translateY(-5px);
+}
+
+.cluster-card h3 {
+    padding: 15px;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.summary {
+    padding: 15px;
+    font-size: 1rem;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.arguments {
+    padding: 15px;
+}
+
+.arguments h4 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.arguments ul {
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+.arguments li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* 全ての意見 */
+.comments-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.comments-table th,
+.comments-table td {
+    padding: 10px;
+    border: 1px solid #ecf0f1;
+    text-align: left;
+}
+
+.comments-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.comments-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* フッター */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .question {
+        font-size: 1.3rem;
+    }
+    
+    .cluster-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .comments-table {
+        font-size: 0.9rem;
+    }
+    
+    .comments-table th,
+    .comments-table td {
+        padding: 8px;
+    }
+}

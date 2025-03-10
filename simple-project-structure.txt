@@ -1,0 +1,14 @@
+# プロジェクト構造
+
+/
+├── inputs/                     # 入力ファイル
+│   └── data.csv                # コンサルテーションのCSVデータ
+├── prompts/                    # AIプロンプトテンプレート
+│   ├── extraction.txt          # データ抽出用プロンプト
+│   ├── labelling.txt           # クラスターラベリング用プロンプト
+│   ├── takeaways.txt           # 要点抽出用プロンプト
+│   └── overview.txt            # 全体概要生成用プロンプト
+├── process_all.py              # 一括処理スクリプト (CLINEで生成)
+├── config.json                 # 簡略化された設定ファイル
+└── output/                     # 出力ディレクトリ（自動生成）
+     └── web/                    # 生成されたウェブサイト

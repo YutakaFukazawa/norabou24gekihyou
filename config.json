@@ -1,0 +1,42 @@
+{
+  "input": {
+    "file": "inputs/data.csv",
+    "comment_column": "comment-body"
+  },
+  "output": {
+    "dir": "output/web"
+  },
+  "prompts": {
+    "dir": "prompts",
+    "extraction": "extraction.txt",
+    "labelling": "labelling.txt",
+    "takeaways": "takeaways.txt",
+    "overview": "overview.txt"
+  },
+  "content": {
+    "title": "劇評ライブラリ",
+    "question": "劇団野らぼうの公演「内側の時間」「新装版 内側の時間」の劇評を基にしたAI解析",
+    "description": "このAI生成レポートは、Polisコンサルテーションのデータに基づいています。"
+  },
+  "clustering": {
+    "num_clusters": 6,
+    "method": "kmeans"
+  },
+  "ai": {
+    "provider": "anthropic",
+    "model": "claude-3-7-sonnet-20250219",
+    "embedding_model": "",
+    "temperature": 0.2,
+    "sample_size": 5,
+    "api_key": "your_api_key_here",
+    "openai_api_key": "",
+    "anthropic_api_key": ""
+  },
+  "visualization": {
+    "colors": [
+      "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd",
+      "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"
+    ],
+    "plotly_url": "https://cdn.plot.ly/plotly-2.29.0.min.js"
+  }
+}
