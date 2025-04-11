@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 
 """
+Talk to the City - シンプル版
+一括処理スクリプト
+
 このスクリプトは、Polisコンサルテーションデータを処理し、
 可視化用のウェブサイトを単一のプロセスで生成します。
 
@@ -530,18 +533,20 @@ def generate_html(data: Dict[str, Any], comments_df: pd.DataFrame, config: Dict[
 <body>
     <header>
         <h1>{config['content']['title']}</h1>
+        <!--
         <p class="question">{config['content']['question']}</p>
         <p class="description">{config['content']['description']}</p>
+        -->
     </header>
     
     <main>
         <section class="overview">
-            <h2>全体の概要</h2>
+            <h2>全体のまとめ</h2>
             <p>{general_overview}</p>
         </section>
         
         <section class="visualization">
-            <h2>意見の分布</h2>
+            <h2>劇評の分布</h2>
             <div id="scatter-plot"></div>
         </section>
 """
@@ -550,7 +555,7 @@ def generate_html(data: Dict[str, Any], comments_df: pd.DataFrame, config: Dict[
     if categories:
         html += """
         <section class="categories">
-            <h2>AIが推察する作品分析</h2>
+            <h2>作品の分析</h2>
         """
         
         for category in categories:
@@ -598,7 +603,7 @@ def generate_html(data: Dict[str, Any], comments_df: pd.DataFrame, config: Dict[
     html += f"""
         
         <section class="clusters">
-            <h2>クラスター分析</h2>
+            <h2>劇評のまとまり</h2>
             <div class="cluster-grid">
 """
     
@@ -633,7 +638,7 @@ def generate_html(data: Dict[str, Any], comments_df: pd.DataFrame, config: Dict[
         </section>
         
         <section class="all-comments">
-            <h2>全ての意見</h2>
+            <h2>全ての劇評</h2>
             <table class="comments-table">
                 <thead>
                     <tr>
@@ -973,12 +978,12 @@ document.addEventListener('DOMContentLoaded', function() {
         title: '意見の分布',
         hovermode: 'closest',
         xaxis: {
-            title: 'X(意見の主要な特徴の違い - 肯定的/批判的、具体的/抽象的など)',
+            title: 'X(具体的視点-抽象的視点)',
             zeroline: false,
             showgrid: false
         },
         yaxis: {
-            title: 'Y(意見の二次的な特徴の違い - 個人的/一般的、感情的/分析的など)',
+            title: 'Y(個人的視点-社会的視点)',
             zeroline: false,
             showgrid: false
         },
@@ -1055,7 +1060,7 @@ def generate_website(data: Dict[str, Any], comments_df: pd.DataFrame, output_dir
 def main():
     """メイン処理関数"""
     # コマンドライン引数の解析
-    parser = argparse.ArgumentParser(description='データ処理と可視化')
+    parser = argparse.ArgumentParser(description='Talk to the City - データ処理と可視化')
     parser.add_argument('--config', type=str, default='config.json', help='設定ファイルのパス')
     parser.add_argument('--input', type=str, help='入力CSVファイルのパス')
     parser.add_argument('--output', type=str, help='出力ディレクトリのパス')
